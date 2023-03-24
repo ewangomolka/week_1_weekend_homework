@@ -41,6 +41,33 @@ def find_pet_by_name(pet_shop, pet_name):
         elif pet["name"] == None:
                 return None
             
+def remove_pet_by_name(pet_shop, pet_name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == pet_name:
+            found_pet = pet
+    return pet_shop["pets"].remove(found_pet)
+            
+def add_pet_to_stock(pet_shop, new_pet):
+    new_pet = {
+            "name": "Bors the Younger",
+            "pet_type": "cat",
+            "breed": "Cornish Rex",
+            "price": 100
+        }
+    pet_shop["pets"].append(new_pet)
+    return len(pet_shop)
+
+def get_customer_cash(customers):
+    return customers["cash"]
+
+def remove_customer_cash(customers, cash):
+    customers["cash"] -= cash
+
+def get_customer_pet_count(customers):
+    return len(customers["pets"])
+
+def add_pet_to_customer(customers, new_pet):
+    customers["pets"].append(new_pet)
 
 
         
