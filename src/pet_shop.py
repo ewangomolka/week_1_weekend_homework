@@ -82,16 +82,20 @@ def customer_can_afford_pet(customers, new_pet):
 # Extensions
 
 def sell_pet_to_customer(pet_shop, pet, customer):
-        if pet and customer["cash"] >= True:    
-            customer["pets"].append(pet)
-            pet_shop["admin"]["total_cash"] += pet["price"]  
-            customer["cash"] -= pet["price"]
-            pet_shop["admin"]["pets_sold"] = len(customer["pets"])
-            pet_shop["pets"].remove(pet)
-        elif pet == False:
-            return None
-        elif customer["cash"] == False:
-            return None
+        # if pet and customer["cash"] >= True:    
+        #     customer["pets"].append(pet)
+        #     pet_shop["admin"]["total_cash"] += pet["price"]  
+        #     customer["cash"] -= pet["price"]
+        #     pet_shop["admin"]["pets_sold"] = len(customer["pets"])
+        #     pet_shop["pets"].remove(pet)
+        # elif pet == False:
+        #     return None
+        # elif customer["cash"] == False:
+        #     return None
+        if find_pet_by_name(pet_shop, pet) and get_customer_cash == True:
+            get_customer_pet_count(customer, pet).append(pet)
+            get_customer_cash(customer).remove(pet["price"])
+            get_total_cash(pet_shop).append(pet["price"])
         
     
 
